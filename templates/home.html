@@ -1,4 +1,25 @@
 {% extends "layout.html" %}
+
+{% block showcase %}
+<Header class="showcase">
+  <div class="overlay"></div>
+  <div class="content">
+    <img src="./assets/images/logo.png" alt="" class="logo">
+
+    <div class="title">
+      <h1>Adams Blog</h1>
+    </div>
+
+    <div class="text">
+      <!-- Ea export admodum proident se laboris o ipsum aliquip. Aut enim eiusmod quo
+      mentitum e expetendis si nostrud summis laboris cernantur qui tempor excepteur
+      despicationes -->
+    </div>
+  </div>
+</Header>
+
+{% endblock showcase %}
+
 {% block content %}
     {% for post in posts %}
       <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
