@@ -2,17 +2,18 @@ from flask import Flask, render_template, url_for, redirect, flash
 from forms import RegistrationForm, LoginForm
 from flask_sqlalchemy import SQLAlchemy
 from boto.s3.connection import S3Connection
+import os
 
 app = Flask(__name__)
 
 # local
-# with open('secret.txt', 'r') as secret:
-#     app.config['SECRET_KEY'] = secret.read()
-
+ # with open('secret.txt', 'r') as secret:
+ #     app.config['SECRET_KEY'] = secret.read()
+app.config['SECRET_KEY'] = os.environ.get()'S3_KEY')
 # Heroku
 #app.config['SECRET_KEY'] = S3Connection(os.environ['S3_KEY'])
-s3 = S3Connection(os.environ['S3_KEY'], os.environ['S3_SECRET'])
-app.config['SECRET_KEY'] = s3.S3_KEY
+# s3 = S3Connection(os.environ['S3_KEY'], os.environ['S3_SECRET'])
+# app.config['SECRET_KEY'] = s3.S3_KEY
 
 
 
