@@ -1,6 +1,8 @@
 from flask import Flask, render_template, url_for, redirect, flash
 from forms import RegistrationForm, LoginForm
 from flask_sqlalchemy import SQLAlchemy
+from boto.s3.connection import S3Connection
+
 app = Flask(__name__)
 
 # local
@@ -8,7 +10,9 @@ app = Flask(__name__)
 #     app.config['SECRET_KEY'] = secret.read()
 
 # Heroku
-app.config['SECRET_KEY'] = ENV['secret']
+app.config['SECRET_KEY'] = S3Connection(os.environ['secret'])
+
+
 
 
 posts = [
