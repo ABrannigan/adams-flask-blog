@@ -9,7 +9,7 @@ app = Flask(__name__)
 # local
  # with open('secret.txt', 'r') as secret:
  #     app.config['SECRET_KEY'] = secret.read()
-app.config['SECRET_KEY'] = os.environ.get()'S3_KEY')
+app.config['SECRET_KEY'] = os.environ.get('S3_KEY')
 # Heroku
 #app.config['SECRET_KEY'] = S3Connection(os.environ['S3_KEY'])
 # s3 = S3Connection(os.environ['S3_KEY'], os.environ['S3_SECRET'])
