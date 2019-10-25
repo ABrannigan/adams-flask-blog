@@ -8,7 +8,7 @@ app = Flask(__name__)
 #     app.config['SECRET_KEY'] = secret.read()
 
 # Heroku
-# app.config['SECRET_KEY'] = ENV['secret']
+app.config['SECRET_KEY'] = ENV['secret']
 
 
 posts = [
