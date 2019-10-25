@@ -3,8 +3,13 @@ from forms import RegistrationForm, LoginForm
 from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
-with open('secret.txt', 'r') as secret:
-    app.config['SECRET_KEY'] = secret.read()
+# local
+# with open('secret.txt', 'r') as secret:
+#     app.config['SECRET_KEY'] = secret.read()
+
+# Heroku
+app.config['SECRET_KEY'] = ENV['secret']
+
 
 posts = [
         {'author': 'Adam Brannigan',
